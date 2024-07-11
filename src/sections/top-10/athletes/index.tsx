@@ -41,7 +41,7 @@ const athletes = [
 
 type Athlete = (typeof athletes)[number];
 
-const DRAG_BUFFER = 50;
+const DRAG_BUFFER = 25;
 
 const SPRING_OPTIONS = {
   type: "spring",
@@ -114,7 +114,6 @@ const AthleteCard = ({ athlete, idx }: { athlete: Athlete; idx: number }) => {
           "linear-gradient(114.72deg, #353844 0.9%, rgba(20, 21, 24, 0.3) 36.15%, #141518 89.03%) 1",
         position: "relative",
       }}
-      transition={SPRING_OPTIONS}
     >
       <Stack sx={{ gap: 1, justifyContent: "space-around", height: "100%" }}>
         <Stack sx={{ gap: 1 }}>

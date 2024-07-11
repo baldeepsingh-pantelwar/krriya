@@ -2,12 +2,13 @@
 
 import { AvatarIcon } from "@/icons/avatar.icon";
 import { Top10Athletes } from "@/sections/top-10/athletes";
+import { Top10Teams } from "@/sections/top-10/teams";
 import { secondaryFont } from "@/theme";
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 
 export default function Top10Page() {
   return (
-    <Stack>
+    <Stack sx={{ pb: "150px" }}>
       <Container>
         <Box sx={{ display: "flex", py: 3, justifyContent: "space-between" }}>
           <Stack gap={1}>
@@ -42,17 +43,24 @@ export default function Top10Page() {
           </IconButton>
         </Box>
       </Container>
-      <Box>
-        <Container>
-          <Typography
-            variant="h5"
-            sx={{ fontFamily: secondaryFont.style.fontFamily }}
-          >
-            Athletes
-          </Typography>
-        </Container>
-        <Top10Athletes />
-      </Box>
+      <Container>
+        <Typography
+          variant="h5"
+          sx={{ fontFamily: secondaryFont.style.fontFamily }}
+        >
+          Athletes
+        </Typography>
+      </Container>
+      <Top10Athletes />
+      <Container>
+        <Typography
+          variant="h5"
+          sx={{ fontFamily: secondaryFont.style.fontFamily }}
+        >
+          Teams
+        </Typography>
+      </Container>
+      <Top10Teams />
     </Stack>
   );
 }
