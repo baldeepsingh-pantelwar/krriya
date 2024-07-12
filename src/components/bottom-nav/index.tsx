@@ -5,9 +5,11 @@ import { Paris2024OlympicIcon } from "@/icons/paris-2024-olympic.icon";
 import { Paris2024TextIcon } from "@/icons/paris-2024-text.icon";
 import { StoriesIcon } from "@/icons/stories.icon";
 import { Top10Icon } from "@/icons/top-10.icon";
+import { useDispatch, useSelector } from "@/store";
+import { navSlice } from "@/store/nav.slice";
+import { View } from "@/types/nav";
 import { Box, Stack, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { usePathname, useRouter } from "next/navigation";
 import { useRef } from "react";
 
 export const BottomNav = () => {
@@ -22,29 +24,29 @@ export const BottomNav = () => {
         height: "85px",
       }}
     >
-      <TabIcon icon={<Top10Icon />} label="Top 10" href="/home/top-10" />
-      <CenterIcon href="/home/paris-2024" />
-      <TabIcon icon={<StoriesIcon />} label="Stories" href="/home/stories" />
+      <TabIcon icon={<Top10Icon />} label="Top 10" view="top-10" />
+      <CenterIcon view="paris-2024" />
+      <TabIcon icon={<StoriesIcon />} label="Stories" view="stories" />
     </Box>
   );
 };
 
 const TabIcon = ({
-  href,
+  view,
   label,
   icon,
 }: {
-  href: string;
+  view: View;
   label: string;
   icon: JSX.Element;
 }) => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const selected = pathname === href;
+  const { view: currentView } = useSelector((state) => state.nav);
+  const dispatch = useDispatch();
+  const selected = currentView === view;
 
   return (
     <Box
-      onClick={() => router.push(href)}
+      onClick={() => dispatch(navSlice.actions.setView(view))}
       sx={{
         flex: 1,
         bgcolor: "grey.800",
@@ -88,17 +90,18 @@ const TabIcon = ({
   );
 };
 
-const CenterIcon = ({ href }: { href: string }) => {
-  const pathname = usePathname();
-  const router = useRouter();
+const CenterIcon = ({ view }: { view: View }) => {
+  const { view: currentView } = useSelector((state) => state.nav);
+  const dispatch = useDispatch();
+  const selected = currentView === view;
+
   const ref = useRef(0);
-  const selected = pathname === href;
 
   return (
     <Box
       onClick={() => {
         ref.current++;
-        router.push(href);
+        dispatch(navSlice.actions.setView(view));
       }}
     >
       <Box

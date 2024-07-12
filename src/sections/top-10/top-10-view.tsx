@@ -6,7 +6,7 @@ import { Top10Teams } from "@/sections/top-10/teams";
 import { secondaryFont } from "@/theme";
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
 
-export default function Top10Page() {
+export const Top10View = () => {
   return (
     <Stack sx={{ pb: "150px" }}>
       <Container>
@@ -63,4 +63,4 @@ export default function Top10Page() {
       <Top10Teams />
     </Stack>
   );
-}
+};

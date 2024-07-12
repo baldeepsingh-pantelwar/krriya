@@ -76,7 +76,8 @@ export const theme = createTheme({
           WebkitBoxShadow: `0 0 0 100px ${theme.palette.background.paper} inset !important`,
           WebkitTextFillColor: `${theme.palette.text.primary} !important`,
         },
-        ".no-scrollbar": {
+        "*": {
+          userSelect: "none",
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": {
             width: 0,

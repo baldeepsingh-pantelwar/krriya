@@ -2,7 +2,7 @@ import { OlympicRingsIcon } from "@/icons/olympic-rings.icon";
 import { Paris2024TextIcon } from "@/icons/paris-2024-text.icon";
 import { Stack } from "@mui/material";
 
-export default function Paris2024Page() {
+export default function Paris2024View() {
   return (
     <>
       <Stack
