@@ -5,10 +5,13 @@ import { Top10Athletes } from "@/sections/top-10/athletes";
 import { Top10Teams } from "@/sections/top-10/teams";
 import { secondaryFont } from "@/theme";
 import { Box, Container, IconButton, Stack, Typography } from "@mui/material";
+import { Top10Events } from "./events";
+import { Top10Moments } from "./moments";
+import { Top10Stadiums } from "./stadiums";
 
 export const Top10View = () => {
   return (
-    <Stack sx={{ pb: "150px" }}>
+    <Stack sx={{ pb: "150px", pt: "25px" }}>
       <Container>
         <Box sx={{ display: "flex", py: 3, justifyContent: "space-between" }}>
           <Stack gap={1}>
@@ -61,6 +64,33 @@ export const Top10View = () => {
         </Typography>
       </Container>
       <Top10Teams />
+      <Container>
+        <Typography
+          variant="h5"
+          sx={{ fontFamily: secondaryFont.style.fontFamily }}
+        >
+          Events
+        </Typography>
+      </Container>
+      <Top10Events />
+      <Container>
+        <Typography
+          variant="h5"
+          sx={{ fontFamily: secondaryFont.style.fontFamily }}
+        >
+          Stadiums & Arenas
+        </Typography>
+      </Container>
+      <Top10Stadiums />
+      <Container>
+        <Typography
+          variant="h5"
+          sx={{ fontFamily: secondaryFont.style.fontFamily }}
+        >
+          Sports Moments
+        </Typography>
+      </Container>
+      <Top10Moments />
     </Stack>
   );
 };

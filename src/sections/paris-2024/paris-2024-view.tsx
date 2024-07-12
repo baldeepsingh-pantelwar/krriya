@@ -1,6 +1,7 @@
 import { OlympicRingsIcon } from "@/icons/olympic-rings.icon";
 import { Paris2024TextIcon } from "@/icons/paris-2024-text.icon";
 import { Stack } from "@mui/material";
+import { Highlights } from "./highlights";
 
 export default function Paris2024View() {
   return (
@@ -22,6 +23,7 @@ export default function Paris2024View() {
         <OlympicRingsIcon />
         <Paris2024TextIcon />
       </Stack>
+      <Highlights />
     </>
   );
 }

@@ -82,6 +82,8 @@ export const theme = createTheme({
           "&::-webkit-scrollbar": {
             width: 0,
             height: 0,
+            display: "none",
+            background: "transparent",
           },
         },
       }),
